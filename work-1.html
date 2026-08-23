@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WORK | Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            font-family:
+                Arial,
+                "Noto Sans JP",
+                sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ========================================
+           HEADER
+        ======================================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 50px;
+
+            background: rgba(0, 0, 0, 0.85);
+            border-bottom: 1px solid #333;
+
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 20px;
+            letter-spacing: 3px;
+        }
+
+        .back {
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+        /* ========================================
+           HERO
+        ======================================== */
+
+        .work-hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding: 120px 8% 80px;
+
+            border-bottom: 1px solid #333;
+        }
+
+        .hero-inner {
+            width: 1200px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .work-number {
+            margin-bottom: 15px;
+
+            font-size: 14px;
+            letter-spacing: 4px;
+            color: #888;
+        }
+
+        .work-title {
+            font-size: clamp(42px, 6vw, 90px);
+            font-weight: 400;
+            line-height: 1;
+
+            margin-bottom: 25px;
+        }
+
+        .work-category {
+            font-size: 15px;
+            letter-spacing: 3px;
+            color: #aaa;
+
+            margin-bottom: 50px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+
+            overflow: hidden;
+
+            border: 1px solid #555;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        /* ========================================
+           COMMON
+        ======================================== */
+
+        .section {
+            width: 1200px;
+            max-width: calc(100% - 80px);
+
+            margin: 0 auto;
+            padding: 120px 0;
+
+            border-bottom: 1px solid #333;
+        }
+
+        .section-title {
+            margin-bottom: 50px;
+
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 4px;
+
+            color: #aaa;
+        }
+
+        /* ========================================
+           OVERVIEW
+        ======================================== */
+
+        .overview {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+
+            gap: 80px;
+        }
+
+        .overview-lead {
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .overview-text {
+            font-size: 16px;
+            line-height: 2;
+
+            color: #ccc;
+        }
+
+        /* ========================================
+           INFORMATION
+        ======================================== */
+
+        .information {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            border-top: 1px solid #555;
+            border-left: 1px solid #555;
+        }
+
+        .info-item {
+            padding: 25px;
+
+            border-right: 1px solid #555;
+            border-bottom: 1px solid #555;
+        }
+
+        .info-label {
+            margin-bottom: 10px;
+
+            font-size: 12px;
+            letter-spacing: 2px;
+
+            color: #777;
+        }
+
+        .info-value {
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           PROCESS
+        ======================================== */
+
+        .process {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .process-item {
+            padding: 30px;
+
+            min-height: 220px;
+
+            border: 1px solid #555;
+        }
+
+        .process-number {
+            margin-bottom: 30px;
+
+            font-size: 12px;
+            letter-spacing: 3px;
+
+            color: #777;
+        }
+
+        .process-item h3 {
+            margin-bottom: 15px;
+
+            font-size: 22px;
+            font-weight: 400;
+        }
+
+        .process-item p {
+            font-size: 14px;
+            line-height: 1.8;
+
+            color: #bbb;
+        }
+
+        /* ========================================
+           POINT
+        ======================================== */
+
+        .point {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .point-image {
+            height: 450px;
+
+            border: 1px solid #555;
+            overflow: hidden;
+        }
+
+        .point-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .point-content h3 {
+            margin-bottom: 25px;
+
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+
+        .point-content p {
+            font-size: 15px;
+            line-height: 2;
+
+            color: #bbb;
+        }
+
+        /* ========================================
+           TECHNOLOGY
+        ======================================== */
+
+        .technology-list {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .technology-list span {
+            padding: 12px 25px;
+
+            border: 1px solid #777;
+
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        /* ========================================
+           RESULT
+        ======================================== */
+
+        .result {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+        }
+
+        .result h3 {
+            margin-bottom: 20px;
+
+            font-size: 28px;
+            font-weight: 400;
+        }
+
+        .result p {
+            font-size: 15px;
+            line-height: 2;
+
+            color: #bbb;
+        }
+
+        /* ========================================
+           LINKS
+        ======================================== */
+
+        .links {
+            display: flex;
+            gap: 20px;
+
+            margin-top: 50px;
+        }
+
+        .links a {
+            display: inline-block;
+
+            padding: 15px 40px;
+
+            border: 1px solid #aaa;
+
+            font-size: 13px;
+            letter-spacing: 2px;
+
+            transition: 0.3s;
+        }
+
+        .links a:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+
+        footer {
+            padding: 60px 0;
+
+            text-align: center;
+
+            color: #666;
+
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        /* ========================================
+           RESPONSIVE
+        ======================================== */
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 0 20px;
+            }
+
+            .work-hero {
+                padding: 110px 20px 60px;
+            }
+
+            .hero-image {
+                height: 300px;
+            }
+
+            .section {
+                max-width: calc(100% - 40px);
+                padding: 80px 0;
+            }
+
+            .overview,
+            .point,
+            .result {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .information {
+                grid-template-columns: 1fr;
+            }
+
+            .process {
+                grid-template-columns: 1fr;
+            }
+
+            .point-image {
+                height: 300px;
+            }
+
+            .work-title {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========================================
+         HEADER
+    ======================================== -->
+
+    <header>
+
+        <div class="logo">
+            PORTFOLIO
+        </div>
+
+        <a href="index.html" class="back">
+            ← BACK
+        </a>
+
+    </header>
+
+
+    <!-- ========================================
+         HERO
+    ======================================== -->
+
+    <main>
+
+        <section class="work-hero">
+
+            <div class="hero-inner">
+
+                <p class="work-number">
+                    WORK 01
+                </p>
+
+                <h1 class="work-title">
+                    シフト希望管理アプリ
+                </h1>
+
+                <p class="work-category">
+                    WEB APPLICATION
+                </p>
+
+                <div class="hero-image">
+                    <img
+                        src="images/shift-app-public.png"
+                        alt="シフト希望管理アプリ">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             OVERVIEW
+        ======================================== -->
+
+        <section class="section">
+
+            <p class="section-title">
+                OVERVIEW
+            </p>
+
+            <div class="overview">
+
+                <h2 class="overview-lead">
+                    保育園のアナログなシフト提出を
+                    いつでもどこでも簡単に行うための<br>
+                    Webアプリケーション
+                </h2>
+
+                <p class="overview-text">
+                    学校の課外活動として毎月のシフト希望収集をWeb上で利用できるようにすることを目的として
+                    制作したシステムです。<br><br>
+
+                    出勤希望、休暇希望、欠勤など保育園独自の提出ルールに沿った機能を一つのシステムに
+                    まとめました。<br><br>
+
+                    利用者が迷わず操作できることを意識し、
+                    シンプルで分かりやすい画面構成を設計しました。
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             INFORMATION
+        ======================================== -->
+
+        <section class="section">
+
+            <p class="section-title">
+                INFORMATION
+            </p>
+
+            <div class="information">
+
+                <div class="info-item">
+                    <p class="info-label">
+                        PERIOD
+                    </p>
+
+                    <p class="info-value">
+                        2025.08 - 2026.07
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <p class="info-label">
+                        TEAM
+                    </p>
+
+                    <p class="info-value">
+                        9 MEMBERS
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <p class="info-label">
+                        ROLE
+                    </p>
+
+                    <p class="info-value">
+                        UI Design / Frontend 
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <p class="info-label">
+                        TYPE
+                    </p>
+
+                    <p class="info-value">
+                        Web Application
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             PROCESS
+        ======================================== -->
+
+        <section class="section">
+
+            <p class="section-title">
+                PROCESS
+            </p>
+
+            <div class="process">
+
+                <div class="process-item">
+
+                    <p class="process-number">
+                        01
+                    </p>
+
+                    <h3>
+                        Planning
+                    </h3>
+
+                    <p>
+                        現在の図書利用における課題を整理し、
+                        必要な機能や利用者を明確にしました。
+                    </p>
+
+                </div>
+
+
+                <div class="process-item">
+
+                    <p class="process-number">
+                        02
+                    </p>
+
+                    <h3>
+                        Design
+                    </h3>
+
+                    <p>
+                        利用者が迷わず操作できるよう、
+                        画面構成や情報の配置を設計しました。
+                    </p>
+
+                </div>
+
+
+                <div class="process-item">
+
+                    <p class="process-number">
+                        03
+                    </p>
+
+                    <h3>
+                        Development
+                    </h3>
+
+                    <p>
+                        フロントエンドとデータベースを実装し、
+                        実際の利用を想定したシステムを構築しました。
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             POINT 01
+        ======================================== -->
+
+        <section class="section">
+
+            <p class="section-title">
+                POINT 01
+            </p>
+
+            <div class="point">
+
+                <div class="point-image">
+
+                    <img
+                        src="images/work-1.png"
+                        alt="システム画面">
+
+                </div>
+
+                <div class="point-content">
+
+                    <h3>
+                        カレンダーから<br>
+                        直接選択
+                    </h3>
+
+                    <p>
+                        出勤・休暇・欠勤したい日をカレンダーから
+                        選択できるよう設計しました。<br><br>
+
+                        どんな人でも直感的に操作ができるように
+                        シンプルなカレンダー形式で日付を選択できるようにしています。
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             POINT 02
+        ======================================== -->
+
+        <section class="section">
+
+            <p class="section-title">
+                POINT 02
+            </p>
+
+            <div class="point">
+
+                <div class="point-content">
+
+                    <h3>
+                        一目でわかることを<br>
+                        意識した設計
+                    </h3>
+
+                    <p>
+                        全職員のシフト希望を一覧化し、シフト作成者が管理しやすい形に設計しました。<br><br>
+
+                        保育園固有のシフト提出ルールに即した仕様で、今までのルールとの差異を最小限にしました。
+                    </p>
+
+                </div>
+
+                <div class="point-image">
+
+                    <img
+                        src="images/work-2.png"
+                        alt="データベース設計">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             TECHNOLOGY
+        ======================================== -->
+
+        <section class="section">
+
+            <p class="section-title">
+                TECHNOLOGY
+            </p>
+
+            <div class="technology-list">
+
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>GAS</span>
+                <span>Googlespreadsheet</span>
+                <span>GitHub</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             RESULT
+        ======================================== -->
+
+        <section class="section">
+
+            <p class="section-title">
+                LEARNING
+            </p>
+
+            <div class="result">
+
+                <div>
+
+                    <h3>
+                        制作を通して
+                    </h3>
+
+                    <p>
+                        実際にシステムを設計する中で、開発者目線ではなく、利用者が操作しやすい設計や
+                        見やすい画面を作ることの重要性を学びました。
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        今後について
+                    </h3>
+
+                    <p>
+                        すでに後輩に開発を引き継ぎ、直接かかわることはなくなりましたが、
+                        自分たちが開発したシステムであることを忘れず、後輩たちが疑問に思った
+                        ことなどがあれば積極的にアドバイスしていきたいと考えています。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="links">
+
+                <a href="https://github.com/SIW-ShiftSystem/shift-app-public" target="_blank">
+                    GITHUB
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+
+    <footer>
+        © 2026 PORTFOLIO
+    </footer>
+
+</body>
+
+</html>
