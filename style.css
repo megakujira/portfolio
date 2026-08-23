@@ -179,8 +179,8 @@ body {
 /* profileタイトル */
 
 .profile h2 {
-    margin-left: 100px;
-    margin-bottom: 8px;
+    width: 1000px;
+    margin: 0 auto 8px;
 }
 
 /* profileカード */
