@@ -188,7 +188,7 @@ body {
 .profile-card {
     position: relative;
 
-    width: 1000px;
+    width: 70%;
     height: 254px;
 
     margin: 0 auto;
@@ -199,7 +199,15 @@ body {
 
     border: 1px solid #777;
 
+    overflow: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
     z-index: 3;
+}
+.element::-webkit-scrollbar {
+    display: none;
 }
 
 /* profile画像＋名前 */
@@ -422,7 +430,7 @@ body {
    MOBILE
 ======================================== */
 
-@media (max-width: 615px) {
+@media (max-width: 540px) {
 
     body {
         background: #000;
@@ -435,8 +443,63 @@ body {
     .header-title {
         left: 47px;
     }
+    .profile h3 {
+        font-size: 25px;
+    }
+    .profile p {
+        font-size: 90%;
+    }
+    .profile-image {
+        width: auto;
+        max-width: 90%;
+        height: auto;
+        max-height: 90%;
+    }
 
     .profile-card {
-        width: calc(100% - 188px);
+        width: auto;
+        overflow: hidden;
+        overflow-y: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .element::-webkit-scrollbar {
+    display: none;
+    }
+
+    /* 制作物 */
+    #works-title {
+        position:absolute;
+        width: 60%;
+        height: 42px;
+        background: rgba(0, 0, 0, 0.75);
+        color: white;
+
+        overflow: hidden;
+        z-index: 10;
+    }
+
+    #works-title h2 {
+        white-space: nowrap;
+    }  
+
+    .works-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .works-background {
+        overflow: auto;
+
+        overflow-y: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .works-background::-webkit-scrollbar{
+        display: none;
+    }
+    .work-card img {
+        height: 100
     }
 }
