@@ -443,6 +443,15 @@ body {
     .header-title {
         left: 47px;
     }
+
+    .header-title span {
+        text-shadow: 3px 3px 0 #000;
+    }
+
+    .header {
+        background-size: cover;
+        background-position: right;
+    }
     .profile h3 {
         font-size: 25px;
     }
@@ -474,7 +483,6 @@ body {
         width: 60%;
         height: 42px;
         background: rgba(0, 0, 0, 0.75);
-        color: white;
 
         overflow: hidden;
         z-index: 10;
@@ -501,5 +509,46 @@ body {
     }
     .work-card img {
         height: 100
+    }
+
+
+    .skill {
+        position: relative;
+    }
+
+    .skill-background {
+        height: 50%;
+        overflow: hidden;
+        overflow-x: auto;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .skill-background::-webkit-scrollbar {
+        display: none;
+    }
+
+    #skill-title {
+        position:absolute;
+        top: 0;
+        right: 0;
+        left: auto;
+
+        width: 60%;
+        height: 42px;
+        background: rgba(0, 0, 0, 0.75);
+
+        overflow: hidden;
+        z-index: 10;
+    }
+
+    .skill-list {
+        display: flex;
+        width: max-content;
+    }
+
+    .skill-card {
+        margin-top: 28px;
     }
 }
