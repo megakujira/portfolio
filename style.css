@@ -282,7 +282,39 @@ body {
 
     line-height: 1.08;
 }
+/* GitHubリンク：カードの右上 */
+.profile-github {
+    position: absolute;
+    top: 12px;
+    right: 12px;
 
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 10px;
+
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 6px;
+
+    transition: background 0.3s;
+    z-index: 5;
+}
+
+.profile-github-icon {
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+
+.profile-github:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
 /* ========================================
    WORKS
 ======================================== */
