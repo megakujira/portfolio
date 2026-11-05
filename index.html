@@ -1,75 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta property="og:title" content="MY PORTFOLIO 2026">
-    <meta property="og:description" content="megakujiraのポートフォリオサイト。学習した技術や制作物を紹介します。">
-    <meta property="og:image" content="https://megakujira.github.io/portfolio/images/ogp.png">
-    <meta property="og:url" content="https://megakujira.github.io/portfolio/">
-    <meta property="og:type" content="website">
-
-    <title>MY PORTFOLIO 2026</title>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5V167SDJRL"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-5V167SDJRL');
-    </script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap" rel="stylesheet">    
 </head>
 <body>
     <div class="portfolio">
-        <!-- header -->
-        <header class="header">
-
-            <div class="header-title">
-                <span>MY</span>
-                <span>PORTFOLIO</span>
-                <span>2026</span>
-            </div>
-
-            <p class="update-date">
-                最終更新：2026/10/26
-            </p>
-        </header>
-        <!-- navigation -->
-        <nav class="navigation">
-
-            <a href="#profile">profile</a>
-            <a href="#works">works</a>
-            <a href="#skill">skill</a>
-
-        </nav>
-
-        <div class="page-background">
-            <section id="profile" class="profile section">
-                <h2>profile</h2>
-
-                <!-- profile -->
-                <div class="profile-card">
-
-                    <div class="profile-heading">
-
-                        <img src="images/profile.jpg" alt="profile image" class="profile-image">
-
-                        <h3>megakujira</h3>
-
-                    </div>
-
-                    <p class="profile-text">
-                        初めまして。megakujiraです。<br>
-                        小学生の頃に名前の響きが格好いいという理由でシステムエンジニアを目指し、現在は自分の得意なことで学生や子供たちが自身の将来の選択の幅を広げるための手伝いがしたいと思い埼玉県の専門学生としてプログラミングを学んでいます。<br>
-                        最近は、できることを増やしたいという思いからJavaScriptを勉強してます。<br>
-                        趣味は、ゲーム（FPS・RPG）、料理です。<br>
-                        よろしくお願いします。
-                    </p>
-                    <a
+        <header>
+            <nav class="navigation">
+                <a href="#">Portfolio</a>
+                <a href="#profile">Profile</a>
+                <a href="#works">Works</a>
+                <a href="#skills">Skills</a>
+                <a
                     href="https://github.com/megakujira"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -80,34 +29,62 @@
                         src="https://cdn.simpleicons.org/github/ffffff"
                         alt=""
                         class="profile-github-icon"
-                    >
-                    <span>GitHub</span>
-                    </a>
+                    ></a>
+            </nav>
+        </header>
+        <div class="main">
 
+            <div class="top-image">
+
+                <div class="portfolio-title">
+                    <span>私の</span>
+                    <span>ポートフォリオ</span>
+                    <span>二〇二六</span>
                 </div>
 
-            </section>
+            </div>
 
-            <!-- works -->
-            <section id="works" class="works section">
-                <div id="works-title">   
-                    <h2>works</h2>
-                </div>
-                <div class="section-background works-background">
+            <section id="profile" class="profile-section">
+
+                <div class="profile">
+
+                    <div class="profile-title">
+                        <span>about</span>
+                        <h2>megakujira</h2>
+                    </div>
+
+                    <div class="profile-contain">
+                        <img src="images/profile.jpg" alt="profile image" class="profile-image">
+                        <p class="profile-text">
+                            初めましてmegakujiraです。<br>
+                            小学生の頃に名前の響きが格好いいという理由でシステムエンジニアを目指しはじめ、
+                            現在は自分の得意なことで学生や子供たちが自身の将来の選択の幅を広げるための手伝いがしたいと思い
+                            埼玉県の専門学生としてプログラミングやプロジェクトマネージャーとしての知識を学んでいます。<br>
+                            最近は、できることを増やしたいという思いからJavaScriptを勉強してます。<br>
+                        </p>
+                    </div>
+
                     
-                    <div class="works-list">
+                    <div class="favorite">
+                        
+                        <div class="favorite-title">
+                            <span>favorite</span>
+                            <h2>好きなもの</h2>
+                        </div>
 
-                        <a href="work-1.html" class="work-card">
-                            <img src="images/shift-app-public.png" alt="シフト提出管理アプリ">
-                        </a>
+                        <div class="favorite-contain">
 
-                        <a href="work-2.html" class="work-card">
-                            <img src="images/work-2-1.png" alt="FE学習ポータル">
-                        </a>
+                            <div class="favorite-item">
+                                <h3 class="favorite-thing">好きな生き物</h3>
+                                <span class="favorite-animal">くじら</span>
+                            </div>
 
-                        <a href="" class="work-card">
-                            <img src="" alt="制作中">
-                        </a>
+                            <div class="favorite-item">
+                                <h3 class="favorite-thing">趣味</h3>
+                                <span class="hoby">ゲーム・料理</span>
+                            </div>
+
+                        </div>
 
                     </div>
 
@@ -115,72 +92,208 @@
 
             </section>
 
-            <!-- skill -->
-             <section id="skill" class="skill section">
-                <div id="skill-title">
-                    <h2>skill</h2>
-                </div>
-                <div class="section-background skill-background">
-                    
-                    <div class="skill-list">
+            <section id="works" class="works-section">
+                <div class="works">
 
-                        <div class="skill-card">
-                            <h3>HTML</h3>
-                            <p>
-                                学習期間　1年
-                            </p>
+                    <div class="works-title">
+                        <h2>制作物</h2>
+
+                        <svg class="works-border" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <rect x="0" y="0" width="100" height="100" />
+                        </svg>
+                    </div>
+
+                    <div class="works-content">
+                        <div class="works-slide-container">
+
+                            <div class="works-slide active">
+
+                                <a href="work1.html" class="works-url">
+                                    <img src="images/shift-app-public.png">
+                                </a>
+
+                                <div class="slide-text">
+                                    <h2>シフト提出管理アプリ</h2>
+                                    <p>シフト提出をアプリで簡単に</p>
+                                </div>
+
+                            </div>
+
+                            <div class="works-slide">
+
+                                <a href="work2.html" class="works-url">
+                                    <img src="images/work-2-1.png">
+                                </a>
+
+                                <div class="slide-text">
+                                    <h2>FE学習アプリ</h2>
+                                    <p>いつでも気軽に試験対策</p>
+                                </div>
+
+                            </div>
                         </div>
 
-                        <div class="skill-card">
-                            <h3>CSS</h3>
-                            <p>
-                                学習期間　1年
-                            </p>
-                        </div>
-
-                        <div class="skill-card">
-                            <h3>JavaScript</h3>
-                            <p>
-                                学習期間　1年<br>
-                                現在も学習中
-                            </p>
-                        </div>
-
-                        <div class="skill-card">
-                            <h3>MySQL</h3>
-                            <p>
-                                学習期間　2年<br>
-                                現在も学習中
-                            </p>
-                        </div>
-
-                        <div class="skill-card">
-                            <h3>figma</h3>
-                            <p>
-                                学習期間　1年<br>
-                                現在も学習中
-                            </p>
-                        </div>
-
-                        <div class="skill-card">
-                            <h3>保有資格</h3>
-                            <p>
-                                ITパスポート<br>
-                                基本情報技術者
-                            </p>
-                        </div>
+                        <div class="works-slide-dots">
+                            <button class="works-dot active" aria-label="スライド1"></button>
+                            <button class="works-dot" aria-label="スライド2"></button>
+                        </div>  
 
                     </div>
-                </div>
-             </section>
 
-             <footer class="footer">
-                <p class="copyright">
-                    &copy; 2026 megakujira
-                </p>
-             </footer>
+
+
+                </div>
+            </section>
+
+            <section id="skills" class="skills-section">
+
+                <div class="skills">
+                    <div class="skills-container">
+                        <div class="skills-title">
+                            <h2>技術</h2>
+                            <svg class="skills-border" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <rect x="0" y="0" width="100" height="100" />
+                        </svg>
+                        </div>
+
+                        <div class="skills-list">
+
+                            <div class="skill-type-container">
+                                <h1 class="skill-type">フロント</h1>
+                                <div class="skill-item">
+                                    <h2 class="skill">HTML</h2>
+
+                                    <div class="skill-stars">
+                                        <span class="active">★</span>
+                                        <span class="active">★</span>
+                                        <span class="active">★</span>
+                                        <span class="active">★</span>
+                                        <span>★</span>
+                                        
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <h2 class="skill">CSS</h2>
+
+                                    <div class="skill-stars">
+                                        <span class="active">★</span>
+                                        <span class="active">★</span>
+                                        <span class="active">★</span>
+                                        <span class="active">★</span>
+                                        <span>★</span>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="skill-item">
+                                    <h2 class="skill">JavaScript</h2>
+
+                                    <div class="skill-stars">
+                                        <span class="active">★</span>
+                                        <span class="active">★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="skill-type-container">
+                                <h1 class="skill-type">バックエンド</h1>
+
+                                <div class="skill-item">
+                                    <h2 class="skill">Python</h2>
+
+                                    <div class="skill-stars">
+                                        <span class="active">★</span>
+                                        <span class="active">★</span>
+                                        <span class="active">★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="skill-type-container">
+                                <h1 class="skill-type">データベース</h1>
+                                <div class="skill-item">
+                                    <h2 class="skill">SQL</h2>
+
+                                    <div class="skill-stars">
+                                        <span class="active">★</span>
+                                        <span class="active">★</span>
+                                        <span class="active">★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="skill-item">
+                                    <h2 class="skill">SQLite</h2>
+
+                                    <div class="skill-stars">
+                                        <span class="active">★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-type-container">
+                                <h1 class="skill-type">インフラ</h1>
+                                <div class="skill-item">
+                                    <h2 class="skill">Linux</h2>
+
+                                    <div class="skill-stars">
+                                        <span class="active">★</span>
+                                        <span class="active">★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-type-container">
+
+                                <h1 class="skill-type">保有資格</h1>
+
+                                <div class="skill-item">
+                                    <h2 class="skill">ITパスポート</h2>
+                                    <span>2024年取得</span>
+                                </div>
+
+                                <div class="skill-item">
+                                    <h2 class="skill">基本情報技術者試験</h2>
+                                    <span>2025年取得</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
 
         </div>
+        <footer class="footer">
+            <p class="copyright">
+                &copy;megakujira
+            </p>
+        </footer>
     </div>
+    
+    <script src="scripts.js"></script>
 </body>
 </html>
