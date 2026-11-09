@@ -163,3 +163,41 @@ titles.forEach(title => {
     }
 
 });
+
+// SNSメニューの開閉
+const snsMenuButton = document.querySelector(".sns-menu-button");
+const snsMenuList = document.querySelector(".sns-menu-list");
+
+if (snsMenuButton && snsMenuList) {
+
+    function closeSnsMenu() {
+        snsMenuList.classList.remove("open");
+        snsMenuButton.setAttribute("aria-expanded", "false");
+        snsMenuButton.setAttribute(
+            "aria-label",
+            "SNSメニューを開く"
+        );
+    }
+
+    snsMenuButton.addEventListener("click", () => {
+        const isOpen = snsMenuList.classList.toggle("open");
+
+        snsMenuButton.setAttribute("aria-expanded", isOpen);
+        snsMenuButton.setAttribute(
+            "aria-label",
+            isOpen ? "SNSメニューを閉じる" : "SNSメニューを開く"
+        );
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!event.target.closest(".sns-menu")) {
+            closeSnsMenu();
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeSnsMenu();
+        }
+    });
+}
