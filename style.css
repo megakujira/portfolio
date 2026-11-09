@@ -143,7 +143,7 @@ main
 
     height: 100dvh;
 
-    background-image: url("images/top-image.png");
+    background-image: url("images/top-image.webp");
     background-position: center 75%;
     background-size: cover;
 }
