@@ -115,11 +115,21 @@ navigation
     background: #777;
 }
 
-/* GitHubアイコン */
-.profile-github-icon {
+/* アイコン */
+.profile-github-icon, 
+.profile-x-icon {
     display: block;
+    filter: invert(1);
+}
+
+.profile-github-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.profile-x-icon {
     width: 22px;
-    height: 22px;
+    height:22px;
 }
 
 /*=========================
