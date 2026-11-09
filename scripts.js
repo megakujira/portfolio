@@ -1,8 +1,14 @@
+
+// ==============================
+// Works スライダー
+// ==============================
+
 const slides = document.querySelectorAll('.works-slide');
 const dots = document.querySelectorAll('.works-dot');
 
 let currentIndex = 0;
 let slideTimer;
+let isAnimating = false;
 
 function showSlide(index) {
     const currentSlide = slides[currentIndex];
@@ -14,7 +20,10 @@ function showSlide(index) {
     // 次のスライドを右側に配置
     nextSlide.style.transition = 'none';
     nextSlide.classList.remove('active', 'prev');
+
+    // 元のアニメーション開始タイミングを維持
     void nextSlide.offsetWidth;
+
     nextSlide.style.transition = '';
 
     // 現在のスライドを左へ
@@ -31,6 +40,7 @@ function showSlide(index) {
     currentIndex = index;
 }
 
+// 自動切り替え
 function changeSlide() {
     const nextIndex = (currentIndex + 1) % slides.length;
     showSlide(nextIndex);
@@ -38,39 +48,91 @@ function changeSlide() {
 
 // 丸をクリックしたとき
 dots.forEach((dot, index) => {
+
     dot.addEventListener('click', () => {
-        if (index === currentIndex) return;
+
+        if (index === currentIndex || isAnimating) return;
 
         showSlide(index);
 
-        // 自動切り替えの時間をリセット
         clearInterval(slideTimer);
-        slideTimer = setInterval(changeSlide, 5000);
+        startSlideTimer();
     });
 });
 
-// 5秒ごとに自動切り替え
-slideTimer = setInterval(changeSlide, 5000);
+// 自動切り替えタイマー
+function startSlideTimer() {
+
+    clearInterval(slideTimer);
+
+    if (slides.length > 1) {
+        slideTimer = setInterval(changeSlide, 5000);
+    }
+}
+
+startSlideTimer();
+
+
+// ==============================
+// ナビゲーションのスクロール処理
+// ==============================
 
 const navigation = document.querySelector(".navigation");
 const profileSection = document.querySelector("#profile");
 
-window.addEventListener("scroll", () => {
-    const profilePosition = profileSection.getBoundingClientRect().top;
+if (navigation && profileSection) {
 
-    if (profilePosition <= navigation.offsetHeight) {
-        navigation.classList.add("scrolled");
-    } else {
-        navigation.classList.remove("scrolled");
+    const navigationHeight = navigation.offsetHeight;
+
+    let scrollScheduled = false;
+
+    function updateNavigation() {
+
+        const profilePosition =
+            profileSection.getBoundingClientRect().top;
+
+        navigation.classList.toggle(
+            "scrolled",
+            profilePosition <= navigationHeight
+        );
+
+        scrollScheduled = false;
     }
-});
 
-document.querySelectorAll(".works-border rect, .skills-border rect").forEach(rect => {
+    window.addEventListener("scroll", () => {
+
+        if (!scrollScheduled) {
+
+            scrollScheduled = true;
+
+            requestAnimationFrame(updateNavigation);
+        }
+
+    }, { passive: true });
+
+    updateNavigation();
+}
+
+
+// ==============================
+// SVG 枠線アニメーション
+// ==============================
+
+document.querySelectorAll(
+    ".works-border rect, .skills-border rect"
+).forEach(rect => {
+
     const length = rect.getTotalLength();
 
     rect.style.strokeDasharray = length;
     rect.style.strokeDashoffset = length;
+
 });
+
+
+// ==============================
+// タイトル表示アニメーション
+// ==============================
 
 const worksTitle = document.querySelector(".works-title");
 const skillsTitle = document.querySelector(".skills-title");
@@ -78,18 +140,26 @@ const skillsTitle = document.querySelector(".skills-title");
 const titles = [worksTitle, skillsTitle];
 
 const observer = new IntersectionObserver((entries) => {
+
     entries.forEach(entry => {
+
         if (entry.isIntersecting) {
+
             entry.target.classList.add("show");
+
             observer.unobserve(entry.target);
         }
+
     });
+
 }, {
     threshold: 0.5
 });
 
 titles.forEach(title => {
+
     if (title) {
         observer.observe(title);
     }
+
 });
